@@ -33,7 +33,7 @@ export default function Home() {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <section className="w-full bg-[#F7F7FC] min-h-screen items-center justify-center flex flex-col ">
+      <section className="w-full bg-[#F7F7FC] min-h-screen items-center px-2 justify-center flex flex-col ">
         <Link href="https://www.boostmyshop.com/">
           <a target="_blank">
             <img src="/img/bms-logo.svg" className="mt-8" />
