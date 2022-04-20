@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useRef, useState, useCallback } from "react";
 
 import { Tooltip, Kbd } from "@mantine/core";
 import { useHotkeys } from "@mantine/hooks";
@@ -12,6 +12,8 @@ const Book = () => {
 
   const [soundOn, setSoundOn] = useState(true);
   const [play] = useSound("/sfx/page-flip-sfx.mp3");
+
+  // const isMediumScreen = useMediaQuery("(min-width: 500px)");
 
   const [pageNumber, setPageNumber] = useState(1);
   const [totalPage, setTotalPage] = useState(6);
@@ -32,7 +34,7 @@ const Book = () => {
     const pageFlipObj = book.current.pageFlip();
 
     if (pageFlipObj?.getCurrentPageIndex() === 0) {
-      // pageFlipObj.flip(pageFlipObj?.getPageCount() - 1);
+      pageFlipObj.flip(pageFlipObj?.getPageCount() - 1);
       return;
     } else {
       pageFlipObj.flipPrev();
@@ -42,12 +44,13 @@ const Book = () => {
   const flipForward = useCallback(() => {
     const pageFlipObj = book.current.pageFlip();
 
+    // const addingNumber = isMediumScreen ? 2 : 1;
+
     if (
       pageFlipObj?.getCurrentPageIndex() + 2 ===
       pageFlipObj?.getPageCount()
     ) {
-      // pageFlipObj.flip(0);
-      return;
+      pageFlipObj.flip(0);
     } else {
       pageFlipObj.flipNext();
     }
