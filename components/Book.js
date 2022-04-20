@@ -1,11 +1,10 @@
 import { useRef, useState, useCallback, useEffect } from "react";
-import { Tooltip } from "@mantine/core";
 
-import HTMLFlipBook from "react-pageflip";
+import { Tooltip, Kbd } from "@mantine/core";
+import { useHotkeys } from "@mantine/hooks";
 
 import useSound from "use-sound";
-
-import { animated } from "react-spring";
+import HTMLFlipBook from "react-pageflip";
 
 const Book = () => {
   const book = useRef(null);
@@ -27,7 +26,6 @@ const Book = () => {
 
   const toggleSound = () => {
     setSoundOn(!soundOn);
-    
   };
 
   const flipBack = useCallback(() => {
@@ -54,6 +52,11 @@ const Book = () => {
       pageFlipObj.flipNext();
     }
   }, [book]);
+
+  useHotkeys([
+    ["ArrowRight", () => flipForward()],
+    ["ArrowLeft", () => flipBack()],
+  ]);
 
   const FlipButton = ({ onClick, classNames, name }) => {
     return (
@@ -129,12 +132,20 @@ const Book = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row items-center gap-6 md:justify-between w-full mt-4 mb-6 max-w-[1080px]">
-        <span className="max-w-md mx-auto md:ml-0 px-1.5 py-1.5 bg-slate-100 rounded-lg border border-slate-200">
+        <span className="max-w-lg mx-auto md:ml-0 px-1.5 py-1.5">
           <p className="text-indigo-600 font-medium text-sm text-center">
+            You can navigate pages by&nbsp;
             <em>
-              <strong>Swipe the book&nbsp;</strong>
+              <strong className="bg-slate-100 rounded-lg border border-slate-200 p-1.5">
+                Swiping the book
+              </strong>
             </em>
-            or use these control to view the pages
+            &nbsp;or using&nbsp;
+            <span className="p-1.5 pb-3 ">
+              <Kbd>←</Kbd>&nbsp;
+              <Kbd>→</Kbd>
+            </span>
+            &nbsp;keys
           </p>
         </span>
         <div className="flex items-center gap-6">
