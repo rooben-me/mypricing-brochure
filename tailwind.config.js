@@ -13,6 +13,11 @@ module.exports = {
         5: "url('/img/5.png')",
         6: "url('/img/6.png')",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        poppings: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],

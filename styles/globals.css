@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
+    url("https://www.toptal.com/designers/subtlepatterns/uploads/double-bubble-outline.png");
+}
+
+:focus-within {
+  outline-color: #2f54ea;
+  outline-offset: 8px;
+}
