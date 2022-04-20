@@ -27,6 +27,7 @@ const Book = () => {
 
   const toggleSound = () => {
     setSoundOn(!soundOn);
+    
   };
 
   const flipBack = useCallback(() => {
