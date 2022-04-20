@@ -213,12 +213,6 @@ const Book = () => {
         </div>
         <div>
           <img
-            src="/svg/5.svg"
-            className="w-full h-full border-2 border-slate-200 rounded-lg"
-          />
-        </div>
-        <div>
-          <img
             src="/svg/6.svg"
             className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
