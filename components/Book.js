@@ -63,7 +63,15 @@ const Book = () => {
 
   const FlipButton = ({ onClick, classNames, name }) => {
     return (
-      <Tooltip label={name} position="top" withArrow arrowSize={3}>
+      <Tooltip
+        transition="skew-down"
+        transitionDuration={300}
+        transitionTimingFunction="ease"
+        label={name}
+        position="top"
+        withArrow
+        arrowSize={3}
+      >
         <button
           onClick={onClick}
           className={`fill-slate-700 rounded-full border border-slate-200 bg-slate-100 p-1.5 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-2 ${classNames}`}
@@ -87,6 +95,9 @@ const Book = () => {
   const SoundButton = () => {
     return (
       <Tooltip
+        transition="skew-down"
+        transitionDuration={300}
+        transitionTimingFunction="ease"
         label={soundOn ? "Turn off sound" : "I want sound"}
         position="top"
         withArrow
