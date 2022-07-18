@@ -1,5 +1,7 @@
 import { useRef, useState, useCallback } from "react";
 
+import Image from "next/image";
+
 import { Tooltip, Kbd } from "@mantine/core";
 import { useHotkeys } from "@mantine/hooks";
 
@@ -73,6 +75,7 @@ const Book = () => {
         arrowSize={3}
       >
         <button
+          aria-label={`${name} button`}
           onClick={onClick}
           className={`fill-slate-700 rounded-full border border-slate-200 bg-slate-100 p-1.5 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-2 ${classNames}`}
         >
@@ -104,6 +107,7 @@ const Book = () => {
         arrowSize={3}
       >
         <button
+          aria-label="toggle sound button"
           onClick={toggleSound}
           className="fill-slate-700 rounded-full border border-slate-200 bg-slate-100 p-1.5 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-2"
         >
@@ -192,39 +196,51 @@ const Book = () => {
         onFlip={onFlipSound}
         flippingTime={500}
       >
-        <div>
-          <img
-            src="/svg/1.svg"
+        <div className="relative">
+          <Image
+            src="/img/bms-brocture/page-1.svg"
+            alt="Page 1"
+            layout="fill"
             className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
-        <div>
-          <img
-            src="/svg/2.svg"
+        <div className="relative">
+          <Image
+            src="/img/bms-brocture/page-2.svg"
+            alt="Page 2"
+            layout="fill"
             className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
-        <div>
-          <img
-            src="/svg/3.svg"
+        <div className="relative">
+          <Image
+            src="/img/bms-brocture/page-3.svg"
+            alt="Page 3"
+            layout="fill"
             className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
-        <div>
-          <img
-            src="/svg/4.svg"
+        <div className="relative">
+          <Image
+            src="/img/bms-brocture/page-4.svg"
+            alt="Page 4"
+            layout="fill"
             className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
-        <div>
-          <img
-            src="/svg/5.svg"
+        <div className="relative">
+          <Image
+            src="/img/bms-brocture/page-5.svg"
+            alt="Page 5"
+            layout="fill"
             className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
-        <div>
-          <img
-            src="/svg/6.svg"
+        <div className="relative">
+          <Image
+            src="/img/bms-brocture/page-6.svg"
+            alt="Page 6"
+            layout="fill"
             className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
