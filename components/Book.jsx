@@ -196,52 +196,46 @@ const Book = () => {
         onFlip={onFlipSound}
         flippingTime={500}
       >
-        <div className="relative">
+        <div className="relative border-2 border-slate-200 rounded-lg">
           <Image
             src="/img/bms-brocture/page-1.svg"
             alt="Page 1"
             layout="fill"
-            className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
-        <div className="relative">
+        <div className="relative border-2 border-slate-200 rounded-lg">
           <Image
             src="/img/bms-brocture/page-2.svg"
             alt="Page 2"
             layout="fill"
-            className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
-        <div className="relative">
+        <div className="relative border-2 border-slate-200 rounded-lg">
           <Image
             src="/img/bms-brocture/page-3.svg"
             alt="Page 3"
             layout="fill"
-            className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
-        <div className="relative">
+        <div className="relative border-2 border-slate-200 rounded-lg">
           <Image
             src="/img/bms-brocture/page-4.svg"
             alt="Page 4"
             layout="fill"
-            className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
-        <div className="relative">
+        <div className="relative border-2 border-slate-200 rounded-lg">
           <Image
             src="/img/bms-brocture/page-5.svg"
             alt="Page 5"
             layout="fill"
-            className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
-        <div className="relative">
+        <div className="relative border-2 border-slate-200 rounded-lg">
           <Image
             src="/img/bms-brocture/page-6.svg"
             alt="Page 6"
             layout="fill"
-            className="w-full h-full border-2 border-slate-200 rounded-lg"
           />
         </div>
       </HTMLFlipBook>

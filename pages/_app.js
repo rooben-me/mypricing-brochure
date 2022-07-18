@@ -4,7 +4,7 @@ import "../styles/globals.css";
 export default function App(props) {
   const { Component, pageProps } = props;
 
-  // mantine was not working in production but was wokrng fine in dev , add the key attribute to get the styles working
+  // mantine was not working in production but was working fine in dev , add the key attribute to get the styles working
 
   return (
     <>

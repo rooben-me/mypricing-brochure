@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { Skeleton } from "@mantine/core";
 
 const Book = lazy(() => import("../components/Book"));
 
@@ -53,7 +54,15 @@ export default function Home() {
         <h1 className="mt-4 text-2xl text-center font-semibold font-poppings text-slate-800">
           myPricing web brochure
         </h1>
-        <Suspense fallback={<p>loading...</p>}>
+        <Suspense
+          fallback={
+            <Skeleton
+              height={890}
+              radius="md"
+              className="max-w-[1080px] mx-auto mt-8"
+            />
+          }
+        >
           <Book />
         </Suspense>
       </section>
