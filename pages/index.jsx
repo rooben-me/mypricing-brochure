@@ -3,11 +3,20 @@ import { lazy, Suspense } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { Skeleton } from "@mantine/core";
 
 const Book = lazy(() => import("../components/Book"));
 
 export default function Home() {
+  const LoadingBlock = () => {
+    return (
+      <div className="max-w-[1080px] mx-auto mt-8 h-[780px] flex items-center justify-center w-full bg-slate-100 border border-slate-200 rounded-lg">
+        <p className="text-slate-700 animate-pulse font-inter">
+          Loading Book...
+        </p>
+      </div>
+    );
+  };
+
   return (
     <div>
       <Head>
@@ -54,15 +63,7 @@ export default function Home() {
         <h1 className="mt-4 text-2xl text-center font-semibold font-poppings text-slate-800">
           myPricing web brochure
         </h1>
-        <Suspense
-          fallback={
-            <Skeleton
-              height={890}
-              radius="md"
-              className="max-w-[1080px] mx-auto mt-8"
-            />
-          }
-        >
+        <Suspense fallback={<LoadingBlock />}>
           <Book />
         </Suspense>
       </section>
